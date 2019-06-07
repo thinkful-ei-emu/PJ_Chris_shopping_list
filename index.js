@@ -91,7 +91,7 @@ function handleDeleteItemClicked() {
     const deleted = getItemIdFromElement(event.currentTarget);
     STORE.splice(deleted,1);
     renderShoppingList();
-  });
+  }); 
 }
   
 // this function will be our callback when the page loads. it's responsible for
