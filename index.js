@@ -88,8 +88,9 @@ function handleItemCheckClicked() {
 function handleDeleteItemClicked() {
   $('.js-shopping-list').on('click','.js-item-delete', function(event) {
     console.log('`handleDeleteItemClicked` ran');
-    const deleted = getItemIdFromElement(event.currentTarget);
-    STORE.splice(deleted,1);
+    const delID = getItemIdFromElement(event.currentTarget);
+    const delIndex = STORE.map(x => x.id).indexOf(delID);
+    STORE.splice(delIndex,1);
     renderShoppingList();
   }); 
 }
